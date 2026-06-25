@@ -211,7 +211,7 @@ pipeline {
                         }
                         post {
                             unsuccessful {
-                                dir("${REFS.repo}/tests/${TEST_PATH}") {
+                                dir("${WORKSPACE}/tiflash/tests/${TEST_PATH}") {
                                     sh label: "archive logs", script: """
                                         docker ps -a || true
                                         if [ -d log ]; then
